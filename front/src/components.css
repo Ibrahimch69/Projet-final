@@ -1,0 +1,40 @@
+
+.orange{
+    background-color: hsl(27, 89%, 63%);
+  }
+  .titre{
+    font-size: 64px;
+  }
+  .dark{
+    background-color: #000000;
+  }
+  .erwin{
+    float: left;
+    margin: 0 0 0 15px;  
+  }
+  .alignright{
+    text-align: right;
+    margin:25px
+  
+  }
+  
+
+  .mda{
+margin: 32px;
+  }
+ /*  .courir{
+    background-image: url(https://cdn.discordapp.com/attachments/899672114955681844/983703947975991306/courir.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  .wh{
+      color: white;
+  }
+  @media screen and (max-width: 991px) {
+    .btnor {
+    margin: 15px;
+    }
+  }
+  .btnor{
+    background-color: hsl(27, 89%, 63%);
+  }
