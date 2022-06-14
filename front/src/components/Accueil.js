@@ -3,7 +3,7 @@ import React from 'react'
 import logo from '../images/logo.png'
 import courir from '../images/courir.jpg'	
 import Components from '../components.css'
-import Navbar from './Navbar'
+import Navbar from './Navbar' 
 import Footer from './Footer'
  import erwin from '../images/erwin.jpg'
 import img from '../images/img.png'
@@ -99,7 +99,7 @@ function Accueil() {
 
 
        <h1 className=' d-flex justify-content-center mda '>A propos</h1>
- 
+  
 
   <div class="container">
  
@@ -125,10 +125,6 @@ function Accueil() {
 
 </div>
  </div>
-
-
-
-
 
 
 

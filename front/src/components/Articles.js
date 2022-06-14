@@ -11,8 +11,9 @@ function Articles() {
 <div class="container">
   <div class="row">
   <div class="col-md-4 col-12 col-lg-3 ">
+    
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2019/04/14/17/54/woman-4127336_960_720.jpg" class="card-img-top" alt="..." />
+        <img src="https://cdn.pixabay.com/photo/2019/04/14/17/54/woman-4127336_960_720.jpg" class="card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Erwin</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -22,7 +23,7 @@ function Articles() {
              </div> 
              <div class="col-md-4 col-12 col-lg-3">
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/22/training-828726_960_720.jpg" class="card-img-top" alt="..." />
+        <img src="https://cdn.pixabay.com/photo/2015/07/02/10/22/training-828726_960_720.jpg" class="card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Erwin</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
