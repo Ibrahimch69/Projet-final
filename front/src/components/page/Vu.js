@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import http from '../Http'
+import Http from "../../Http";
 
 
 
@@ -13,7 +13,7 @@ export default function View(props) {
     },[]);
 
     const fetchArticle= () =>{
-        http.get('/article/'+id+'/edit').then((res)=>{
+        Http.get('/article/'+id+'/edit').then((res)=>{
             setArticle({
                titre:res.data.titre,
                 description:res.data.description,

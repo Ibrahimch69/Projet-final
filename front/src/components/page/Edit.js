@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Http from '../Http'
+import http from '../../Http';
 
 
 export default function Edit(props) {
@@ -13,7 +13,7 @@ export default function Edit(props) {
     },[]);
 
     const fetchUser= () =>{
-            Http.get('/article/'+id+'/edit').then((res)=>{
+            http.get('/article/'+id+'/edit').then((res)=>{
             setArticle({
                 titre:res.data.titre,
                 description:res.data.description,
@@ -29,8 +29,8 @@ export default function Edit(props) {
     }
 
     const submitForm = () =>{
-        Http.put('/article/'+id,article).then((res)=>{
-            navigate('/');
+        http.put('/article/'+id,article).then((res)=>{
+            navigate('/list');
         })
     }
     return (

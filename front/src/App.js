@@ -5,6 +5,10 @@ import Accueil from './components/Accueil';
 import Footer from './components/Footer';
 import Articles from './components/Articles';
 import Test from './components/Test';
+import Cree from './components/page/Cree';
+import Edit from './components/page/Edit';
+import Vu from './components/page/Vu';
+import List from './components/page/List';
 
 function App() {
   return (
@@ -17,6 +21,13 @@ function App() {
     <Route path="/footer" element={ <Footer />}/> 
     <Route path="/articles" element={ <Articles />}/> 
     <Route path="/test" element={ <Test />}/>
+
+
+    <Route path="/cree" element={ <Cree />}/>
+    <Route path='/edit/:id' element={<Edit />} />
+    <Route path='/view/:id' element={<Vu />} />
+    <Route path='/list' element={<List />} />
+          
     
      
     </Routes>

@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react';
 // import logoblogsport from '../images/logoblogsport.png'
 import logo from '../images/logo.png'
 import courir from '../images/courir.jpg'	
@@ -8,8 +8,21 @@ import Footer from './Footer'
  import erwin from '../images/erwin.jpg'
 import img from '../images/img.png'
 import 'animate.css';
+import Http from '../Http';
+
 
 function Accueil() {
+
+    const [users, setUsers] = useState([]);
+    useEffect(()=>{
+        fetchAllUsers();
+    },[]);
+  // affiche les derniers articles
+    const fetchAllUsers = () => {
+        Http.get('/article').then(res=>{
+            setUsers(res.data);
+        })
+    }
   return (
 
 
@@ -43,11 +56,6 @@ function Accueil() {
 
 
  <h1 className='d-flex justify-content-center mda'>Mes derniers articles</h1>  
-
-
-
-
-
  <div class="container ">
   <div class="row mda">
   <div class="col-md-4 col-12 col-lg-3 ">
@@ -92,10 +100,42 @@ function Accueil() {
              </div> 
              
              
-              </div>
-              
 
-</div> 
+             {users.map((user, key)=>(
+               key < 4 ?
+          
+                <div class="col-md-4 col-12 col-lg-3">
+        
+                <div class="card ">
+                       <img src={ user.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
+                   <div class="card-body">
+                     <h5 class="card-title">{user.titre}</h5>
+                     <p class="card-text">{user.created_at}</p>
+                  
+                     </div>
+                       </div> 
+                        </div> 
+              :
+             null
+              
+              
+   ))}
+
+
+
+
+
+
+
+
+              </div>
+    
+
+</div>  
+
+   
+        
+ 
 
 
        <h1 className=' d-flex justify-content-center mda '>A propos</h1>

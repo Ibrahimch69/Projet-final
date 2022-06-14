@@ -22,7 +22,10 @@ function Navbar() {
        <Link to={"/"}> <a class="nav-link" href="">Accueil</a></Link>  
         </li>
         <li class="nav-item">
-         <Link to={"articles"}> <a class="nav-link" >Articles</a></Link>
+         <Link to={{  pathname:"/articles/"}}      > <a class="nav-link" >Articles</a></Link>
+        </li>
+        <li class="nav-item">
+         <Link to={{  pathname:"/list/"}}   > <a class="nav-link" >paramètre</a></Link>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Contact</a>

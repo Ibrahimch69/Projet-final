@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import http from '../Http'
+import http from '../../Http';
 
 export default function Create() {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function Create() {
 
     const submitForm = () =>{
         http.post('/article',article).then((res)=>{
-            navigate('/');
+            navigate('/list');
         })
     }
     return (
