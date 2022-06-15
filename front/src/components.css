@@ -35,8 +35,11 @@ margin: 32px;
     background-color: hsl(27, 89%, 63%);
   } 
 .imgcard{
-  height:200px ;
+  height:175px ;
   width: auto;
 }
 
-
+/* .card:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+} */

@@ -6,7 +6,7 @@ function footer() {
   return (
     <div>
         <footer class="page-footer dark ">
-            <div class="container">
+        <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12">
                         <h6 class="text-uppercase font-weight-bold text-light">SPORTBLOG</h6>

@@ -4,19 +4,19 @@ import Http from '../../Http';
 import { Link } from "react-router-dom";
 import Components from '../../components.css'
 function Home() {
-    const [users, setUsers] = useState([]);
+    const [article, setArticle] = useState([]);
     useEffect(()=>{
-        fetchAllUsers();
+        fetchAllArticle();
     },[]);
 
-    const fetchAllUsers = () => {
+    const fetchAllArticle = () => {
         Http.get('/article').then(res=>{
-            setUsers(res.data);
+            setArticle(res.data);
         })
     }
-    const deleteUser = (id) => {
+    const deleteArticle = (id) => {
         Http.delete('/article/'+id).then(res=>{
-            fetchAllUsers();
+            fetchAllArticle();
         })
     }
 
@@ -32,18 +32,18 @@ function Home() {
     <div class="container">
     <div className="row">
    
-            {users.map((user)=>(
+            {article.map((user)=>(
     <div class="col-md-4 col-12 col-lg-3">
         
      <div class="card ">
-            <img src={ user.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
+            <img src={ article.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">{user.titre}</h5>
-          <p class="card-text">{user.created_at}</p>
+          <h5 class="card-title">{article.titre}</h5>
+          <p class="card-text">{article.created_at}</p>
           <Link className="btn btn-info" to={{ pathname: "/edit/" + user.id }}>Edit</Link>&nbsp;
           <Link className="btn btn-primary" to={{ pathname: "/view/" + user.id }}>View</Link>&nbsp;
           <button type="button" className="btn btn-danger"
-                            onClick={()=>{deleteUser(user.id)}}
+                            onClick={()=>{deleteArticle(user.id)}}
                            >Delete</button>
           </div>
             </div> 
