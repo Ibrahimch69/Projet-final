@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
-// import logoblogsport from '../images/logoblogsport.png'
-import logo from '../images/logo.png'
-import courir from '../images/courir.jpg'
 import Components from '../components.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import erwin from '../images/erwin.jpg'
 import img from '../images/img.png'
 import 'animate.css';
 import Http from '../Http';
 import sport from '../images/sport.jpeg'
 import spo from '../images/spo.jpg'
+
+
+import pdp from '../images/pdp.jpg'
+import dos from '../images/dos.webp'
+
+import poids from '../images/poids.png'
+import muscle from '../images/muscle.png'
+import coeur from '../images/coeur.png'
+
 
 
 function Accueil() {
@@ -30,7 +35,7 @@ function Accueil() {
 
 
     <div>
-      <Navbar />
+<Navbar/>
       <section>
         <div class="container-fluid mt-5">
           <div className="row ">
@@ -67,9 +72,9 @@ function Accueil() {
 
 
 
-
+<div className="tout">
       <h1 className=' d-flex justify-content-center mda '>A propos</h1>
-      <div class="container-fluid mt-5">
+      <div class="container-fluid mt-5 ">
         <div className="row ">
           <div class="col-lg-6 courir ">
             <img src={spo} className="img-fluid w-75 col-md-6 float-md-end mb-3 ms-md-2  " alt="courir" />
@@ -94,6 +99,32 @@ function Accueil() {
           </div>
         </div>
       </div>
+      </div>
+      <h1 className='d-flex justify-content-center mda'>Les bienfaits du sport </h1>
+    
+
+
+
+      <div class="container">
+  <div class="row  text-center ">
+ 
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={muscle} className="img-fluid  " alt="courir" />
+    <h5>perde du bois</h5>
+ 
+    </div>
+    
+ 
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={poids} className="img-fluid  " alt="courir" />
+    <h5 >perde du bois</h5>
+    </div>
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={coeur} className="img-fluid   " alt="courir" />
+    <h5>perde du bois</h5>
+    </div>
+  </div>
+</div> 
 
 
 
@@ -101,6 +132,33 @@ function Accueil() {
 
 
 
+
+
+
+
+
+                    {/* AVEC LES IMAGES */}
+
+{/* <div class="container">
+  <div class="row  text-center ">
+ 
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={pdp} className="img-fluid  " alt="courir" />
+    <h5>perde du bois</h5>
+ 
+    </div>
+    
+ 
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={dos} className="img-fluid  " alt="courir" />
+    <h5 >perde du bois</h5>
+    </div>
+    <div class="col-md-4 col-12 col-lg-4">
+    <img src={pdp} className="img-fluid   " alt="courir" />
+    <h5>perde du bois</h5>
+    </div>
+  </div>
+</div> */}
 
 
 
@@ -164,7 +222,7 @@ function Accueil() {
               <div class="col-md-4 col-12 col-lg-3">
 
                 <div class="card ">
-                  <img src={user.image} class="card-img-top img-fluid imgcard card-img-top " alt="..." />
+                  <img src={user.image} class="card-img-top img-fluid " alt="..." />
                   <div class="card-body">
                     <h5 class="card-title">{user.titre}</h5>
                     <p class="card-text">{user.created_at}</p>
@@ -195,7 +253,7 @@ function Accueil() {
 
 
 
-      <Footer />
+   
 
     </div>
   )

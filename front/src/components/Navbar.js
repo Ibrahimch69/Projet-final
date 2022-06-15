@@ -6,14 +6,18 @@ import {Link} from 'react-router-dom'
 function Navbar() {
   return (
     // Pour la navbar du site 
-<nav class="navbar navbar-expand-lg orange navbar-light ">
+/* <nav className="navbar navbar-expand-lg orange navbar-light ">  */
 
-  <div class="container-fluid">
+<nav className="navbar navbar-expand-lg navbar-light fixed-top ">
+
+
+
+  <div className="container-fluid">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
           <img src={logoblogsport} class="logo" alt="logo"  width="50" height="50" />

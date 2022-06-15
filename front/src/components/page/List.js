@@ -32,7 +32,7 @@ function Home() {
     <div class="container">
     <div className="row">
    
-            {article.map((user)=>(
+            {article.map((article)=>(
     <div class="col-md-4 col-12 col-lg-3">
         
      <div class="card ">
@@ -40,10 +40,10 @@ function Home() {
         <div class="card-body">
           <h5 class="card-title">{article.titre}</h5>
           <p class="card-text">{article.created_at}</p>
-          <Link className="btn btn-info" to={{ pathname: "/edit/" + user.id }}>Edit</Link>&nbsp;
-          <Link className="btn btn-primary" to={{ pathname: "/view/" + user.id }}>View</Link>&nbsp;
+          <Link className="btn btn-info" to={{ pathname: "/edit/" + article.id }}>Edit</Link>&nbsp;
+          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}>View</Link>&nbsp;
           <button type="button" className="btn btn-danger"
-                            onClick={()=>{deleteArticle(user.id)}}
+                            onClick={()=>{deleteArticle(article.id)}}
                            >Delete</button>
           </div>
             </div> 
