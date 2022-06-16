@@ -40,11 +40,11 @@ function Home() {
         <div class="card-body">
           <h5 class="card-title">{article.titre}</h5>
           <p class="card-text">{article.created_at}</p>
-          <Link className="btn btn-info" to={{ pathname: "/edit/" + article.id }}>Edit</Link>&nbsp;
-          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}>View</Link>&nbsp;
+          <Link className="btn btn-info" to={{ pathname: "/edit/" + article.id }}><i class="fa-solid fa-pen-to-square"></i></Link>&nbsp;
+          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>&nbsp;
           <button type="button" className="btn btn-danger"
                             onClick={()=>{deleteArticle(article.id)}}
-                           >Delete</button>
+                           ><i class="fa-solid fa-trash"></i></button>
           </div>
             </div> 
              </div> 

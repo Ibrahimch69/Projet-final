@@ -18,7 +18,8 @@ export default function Create() {
     }
     return (
         <div>
-            <h2>New User</h2>
+        
+                    <h2>New article</h2>
             <div className="row">
                 <div className="col-sm-6">
                     <div className="card p-4">

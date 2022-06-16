@@ -7,14 +7,14 @@ import 'animate.css';
 import Http from '../Http';
 import sport from '../images/sport.jpeg'
 import spo from '../images/spo.jpg'
-
-
 import pdp from '../images/pdp.jpg'
 import dos from '../images/dos.webp'
 
 import poids from '../images/poids.png'
 import muscle from '../images/muscle.png'
 import coeur from '../images/coeur.png'
+
+import { Link } from "react-router-dom";
 
 
 
@@ -43,10 +43,11 @@ function Accueil() {
 
 
               <img src={img} className="img-fluid w-25 rounded mx-auto d-block animate__animated  animate__backInDown" alt="logo" />
-              <h1 className='text-center animate__animated  animate__backInDown'>SPORTBLOG</h1>
-              <p className='text-center animate__animated  animate__backInDown'>Le sport c'est la vie</p>
+              {/* <h1 className='text-center animate__animated  animate__backInDown'>SPORTBLOG</h1>  */}
+              <h1 className='text-center animate__animated  animate__backInDown titre'>Le sport c'est la vie </h1>
+              <p className='text-center animate__animated  animate__backInDown'>Alors dans notre site il y'aurais becouop de cours sur le sport </p>
               <div class="col text-center">
-                <button type="button" class="btn btn-warning btnor animate__animated  animate__backInDown ">Articles</button>
+                <button type="button" class="btn btn-warning btnor animate__animated  animate__backInDown ">Voir les cours</button>
               </div>
             </div>
 
@@ -109,18 +110,18 @@ function Accueil() {
   <div class="row  text-center ">
  
     <div class="col-md-4 col-12 col-lg-4">
-    <img src={muscle} className="img-fluid  " alt="courir" />
+    <img src={muscle} className="img-fluid w-50" alt="courir" />
     <h5>perde du bois</h5>
  
     </div>
     
  
     <div class="col-md-4 col-12 col-lg-4">
-    <img src={poids} className="img-fluid  " alt="courir" />
+    <img src={poids} className="img-fluid w-50 " alt="courir" />
     <h5 >perde du bois</h5>
     </div>
     <div class="col-md-4 col-12 col-lg-4">
-    <img src={coeur} className="img-fluid   " alt="courir" />
+    <img src={coeur} className="img-fluid w-50  " alt="courir" />
     <h5>perde du bois</h5>
     </div>
   </div>
@@ -173,46 +174,9 @@ function Accueil() {
       <h1 className='d-flex justify-content-center mda'>Mes derniers articles</h1>
       <div class="container ">
         <div class="row mda">
-          <div class="col-md-4 col-12 col-lg-3 ">
-            <div class="card">
-              <img src="https://cdn.pixabay.com/photo/2019/04/14/17/54/woman-4127336_960_720.jpg" class="card-img-top img-fluid " alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Erwin</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn- orange">Voir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 col-lg-3">
-            <div class="card">
-              <img src="https://cdn.pixabay.com/photo/2015/07/02/10/22/training-828726_960_720.jpg" class="card-img-top img-fluid" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Erwin</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn- orange">Voir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 col-lg-3">
-            <div class="card">
-              <img src="https://cdn.pixabay.com/photo/2018/01/01/01/56/yoga-3053488_960_720.jpg" class="card-img-top img-fluid" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Erwin</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn- orange">Voir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12 col-lg-3">
-            <div class="card">
-              <img src="https://cdn.pixabay.com/photo/2017/04/27/08/29/man-2264825_960_720.jpg" class="card-img-top img-fluid" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Erwin</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn- orange">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+          
+         
+        
 
 
 
@@ -222,11 +186,11 @@ function Accueil() {
               <div class="col-md-4 col-12 col-lg-3">
 
                 <div class="card ">
-                  <img src={user.image} class="card-img-top img-fluid " alt="..." />
+                  <img src={user.image} class="card-img-top img-fluid imgcard " alt="..." />
                   <div class="card-body">
                     <h5 class="card-title">{user.titre}</h5>
                     <p class="card-text">{user.created_at}</p>
-
+                    <Link className="btn btn-primary" to={{ pathname: "/view/" + user.id }}>View</Link>&nbsp;
                   </div>
                 </div>
               </div>
