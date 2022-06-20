@@ -27,7 +27,7 @@ function Articles() {
 <h1 className=' d-flex justify-content-center'> Mes Articles</h1>
 
 <div class="container">
-    <div className="row">
+    <div className="row m30">
    
             {users.map((user)=>(
     <div class="col-md-4 col-12 col-lg-3">
@@ -36,7 +36,7 @@ function Articles() {
             <img src={ user.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{user.titre}</h5>
-          <p class="card-text">{user.description }</p>
+         
        
           </div>
             </div> 

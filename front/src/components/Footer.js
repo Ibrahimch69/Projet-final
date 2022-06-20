@@ -5,7 +5,7 @@ import img from '../images/img.png'
 function footer() {
   return (
     <div>
-        <footer class="bg-secondary">
+        <footer class="">
         <div class="container">
             <div class="row">
             

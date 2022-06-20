@@ -20,20 +20,23 @@ import { Link } from "react-router-dom";
 
 function Accueil() {
 
-  const [users, setUsers] = useState([]);
+  const [article, setArticle] = useState([]);
   useEffect(() => {
     fetchAllUsers();
   }, []);
   // affiche les derniers articles
   const fetchAllUsers = () => {
     Http.get('/article').then(res => {
-      setUsers(res.data);
+      setArticle(res.data);
     })
   }
+
+
+
+
+
+
   return (
-
-
-
     <div>
 <Navbar/>
       <section>
@@ -66,17 +69,9 @@ function Accueil() {
 
 
 
-
-
-
-
-
-
-
-<div className="tout">
-      <h1 className=' d-flex justify-content-center mda '>A propos</h1>
-      <div class="container-fluid mt-5 ">
-        <div className="row ">
+      <h1 className=' d-flex justify-content-center mt30  '>A propos</h1>
+      <div class="container-fluid  ">
+        <div className="row m30 ">
           <div class="col-lg-6 courir ">
             <img src={spo} className="img-fluid w-75 col-md-6 float-md-end mb-3 ms-md-2  " alt="courir" />
           </div>
@@ -100,14 +95,14 @@ function Accueil() {
           </div>
         </div>
       </div>
-      </div>
-      <h1 className='d-flex justify-content-center mda'>Les bienfaits du sport </h1>
+
+      <h1 className='d-flex justify-content-center mt30'>Les bienfaits du sport </h1>
     
 
 
 
       <div class="container">
-  <div class="row  text-center ">
+  <div class="row  text-center m30 ">
  
     <div class="col-md-4 col-12 col-lg-4">
     <img src={muscle} className="img-fluid w-50" alt="courir" />
@@ -129,76 +124,31 @@ function Accueil() {
 
 
 
-
-
-
-
-
-
-
-
-
-                    {/* AVEC LES IMAGES */}
-
-{/* <div class="container">
-  <div class="row  text-center ">
- 
-    <div class="col-md-4 col-12 col-lg-4">
-    <img src={pdp} className="img-fluid  " alt="courir" />
-    <h5>perde du bois</h5>
- 
-    </div>
-    
- 
-    <div class="col-md-4 col-12 col-lg-4">
-    <img src={dos} className="img-fluid  " alt="courir" />
-    <h5 >perde du bois</h5>
-    </div>
-    <div class="col-md-4 col-12 col-lg-4">
-    <img src={pdp} className="img-fluid   " alt="courir" />
-    <h5>perde du bois</h5>
-    </div>
-  </div>
-</div> */}
-
-
-
-
-
-
-     
-
-
-
-
-      <h1 className='d-flex justify-content-center mda'>Mes derniers articles</h1>
+      <h1 className='d-flex justify-content-center mt30'>Mes derniers articles</h1>
       <div class="container ">
-        <div class="row mda">
+        <div class="row m30">
           
          
         
 
 
 
-          {users.map((user, key) => (
-            key < 4 ?
-
-              <div class="col-md-4 col-12 col-lg-3">
-
-                <div class="card ">
-                  <img src={user.image} class="card-img-top img-fluid imgcard " alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">{user.titre}</h5>
-                    <p class="card-text">{user.created_at}</p>
-                    <Link className="btn btn-primary" to={{ pathname: "/view/" + user.id }}>View</Link>&nbsp;
-                  </div>
-                </div>
-              </div>
-              :
-              null
-
-
-          ))}
+        {article.map((article)=>(
+    <div class="col-md-4 col-12 col-lg-3">
+        
+     <div class="card ">
+            <img src={ article.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{article.titre}</h5>
+          <p class="card-text">{article.created_at}</p>
+      
+          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>&nbsp;
+       
+          </div>
+            </div> 
+             </div> 
+              
+   ))}
 
 
 
@@ -218,7 +168,7 @@ function Accueil() {
 
 
    
-
+<Footer/>
     </div>
   )
 }
