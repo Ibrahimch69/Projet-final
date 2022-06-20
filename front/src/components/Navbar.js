@@ -13,26 +13,26 @@ function Navbar() {
 
 
   <div className="container-fluid">
-    <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand " href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
+      <ul class="navbar-nav ">
+        <li class="nav-item ">
           <img src={logoblogsport} class="logo" alt="logo"  width="50" height="50" />
         </li>
         <li class="nav-item">
-       <Link to={"/"}> <a class="nav-link darke" href="" >Accueil</a></Link>  
+       <a class="nav-link " href="/" >Accueil</a>  
         </li>
         <li class="nav-item">
-         <Link to={{  pathname:"/articles/"}}      > <a class="nav-link" >Articles</a></Link>
+          <a class="nav-link" href='/articles' >Articles</a>
         </li>
         <li class="nav-item">
-         <Link to={{  pathname:"/list/"}}   > <a class="nav-link" >paramètre</a></Link>
+           <a class="nav-link" href='/list' >paramètre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled darke">Contact</a>
+       <a class="nav-link " href='/connexion' >connexion</a>
         </li>
       </ul>
     </div>
