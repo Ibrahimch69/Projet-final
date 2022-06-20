@@ -25,28 +25,23 @@ class UserController extends Controller
     
 public function login(Request $request)
 {
-    $user = User::where('email', $request->email)->first(); {
-        
-    }
- 
-    
-
+    $user = User::where('email', $request->email)->first(); 
     if ($user) {
         if (Hash::check($request->password, $user->password)) {
             return response()->json([
                 'token' => $user->createToken(time())->plainTextToken
             ]);
-            
         } else {
             return response()->json([
                 'error' => 'Invalid Credentials'
             ]);
         }
-     
-
     }
-
 }
+
+
+
+
 public function dashboard()
 {
     return response()->json([
