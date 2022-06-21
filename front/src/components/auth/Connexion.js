@@ -7,8 +7,6 @@ function Connexion() {
     const [password, setPassword] = useState('');
     const navigation = useNavigate();
 
-
-
     function Login(){
         http.post('/login', {
             email: email,
@@ -22,38 +20,9 @@ function Connexion() {
                 alert('email ou mot de passe incorrect');
                 console.log(res);
             }
-        } 
-        )
-
-        
-
-
-//  http.post('/login', {
-//     email: email,
-//     password: password
-//   }).then(res =>{console.lg(res);
-//     if (res.data.token !== "") {
-//         localStorage.setItem('token', res.data.token);
-//     }
-//     else {
-//         alert('email ou mot de passe incorrect');
-//     }
-// })
-// console.error('error');
-//     }
-
-             
-                
-                //  localStorage.setItem('name', res.data.user.name);
-                //  window.location.href = '/Acceuil';
-              
-        
-         
+        })
         }
-
-
     return (
-    
             <div class="container">
             <div className="row">
         <div className="col-md-6 mx-auto">

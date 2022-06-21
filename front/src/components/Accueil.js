@@ -9,7 +9,6 @@ import sport from '../images/sport.jpeg'
 import spo from '../images/spo.jpg'
 import pdp from '../images/pdp.jpg'
 import dos from '../images/dos.webp'
-
 import poids from '../images/poids.png'
 import muscle from '../images/muscle.png'
 import coeur from '../images/coeur.png'
