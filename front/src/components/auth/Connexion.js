@@ -41,9 +41,14 @@ function Connexion() {
                 </div>
                 <div className="row">
                     <div className="col-md-12 d-flex justify-content-center">
-                        <input type="submit" onClick={Login} className="btnconnexion"/>
+                        <input type="submit" onClick={Login} className="btn btn-info m-5"/> 
+
+                    
+
+                        
                     </div>
                 </div>
+                <a href="/inscription"> <p className="text-center">Cree un compte</p></a>
             </div>
             </div>
         </div>

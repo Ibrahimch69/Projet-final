@@ -50,4 +50,17 @@ public function dashboard()
 }
   
 
+
+public function logout()
+{
+  auth()->user()->tokens->delete(); {
+    return response()->json([
+        "success" => "logout",
+       ]);
+}
+}
+
+
+
+
 }

@@ -18,7 +18,6 @@ import { Link } from "react-router-dom";
 
 
 function Accueil() {
-
   const [article, setArticle] = useState([]);
   useEffect(() => {
     fetchAllUsers();
@@ -29,12 +28,6 @@ function Accueil() {
       setArticle(res.data);
     })
   }
-
-
-
-
-
-
   return (
     <div>
 <Navbar/>
@@ -47,9 +40,10 @@ function Accueil() {
               <img src={img} className="img-fluid w-25 rounded mx-auto d-block animate__animated  animate__backInDown" alt="logo" />
               {/* <h1 className='text-center animate__animated  animate__backInDown'>SPORTBLOG</h1>  */}
               <h1 className='text-center animate__animated  animate__backInDown titre'>Le sport c'est la vie </h1>
-              <p className='text-center animate__animated  animate__backInDown'>Alors dans notre site il y'aurais becouop de cours sur le sport </p>
+              <p className='text-center animate__animated  animate__backInDown'>Alors dans notre site, il y aurait beaucoup de cours sur le sport. </p>
               <div class="col text-center">
-                <button type="button" class="btn btn-warning btnor animate__animated  animate__backInDown ">Voir les cours</button>
+          <a href=""></a>   <button type="button"  className="btn btn-warning btnor animate__animated  animate__backInDown ">Voir les cours</button>
+
               </div>
             </div>
 
@@ -105,7 +99,7 @@ function Accueil() {
  
     <div class="col-md-4 col-12 col-lg-4">
     <img src={muscle} className="img-fluid w-50" alt="courir" />
-    <h5>perde du bois</h5>
+    <h5>perde du muscle</h5>
  
     </div>
     
@@ -116,14 +110,14 @@ function Accueil() {
     </div>
     <div class="col-md-4 col-12 col-lg-4">
     <img src={coeur} className="img-fluid w-50  " alt="courir" />
-    <h5>perde du bois</h5>
+    <h5>étre en forme</h5>
     </div>
   </div>
 </div> 
 
 
-
-      <h1 className='d-flex justify-content-center mt30'>Mes derniers articles</h1>
+      
+      <h1 className='d-flex justify-content-center mt30 ' id='mda'> Mes derniers articles</h1>
       <div class="container ">
         <div class="row m30">
           
