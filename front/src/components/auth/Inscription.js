@@ -39,16 +39,16 @@ import http from '../../Http'
     <div>Inscription</div>
     <div class="form-group">
     <label for="email">name:</label>
-    <input type="email" name="email" onChange={(e) => setName(e.target.value)} placeholder="Enter email" className="form-control"/>
+    <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Enter votre name" className="form-control"/>
     </div>
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" className="form-control"/>
+    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} placeholder="Enter  votre  email" className="form-control"/>
   </div>
 
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Enter password" className="form-control"/>
+    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} placeholder="Enter  votre  password" className="form-control"/>
   </div>
   
   <button type="button" onClick={submitForm} className="btn btn-info mt-2">Create</button>

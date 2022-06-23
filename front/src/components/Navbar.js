@@ -3,21 +3,20 @@ import logoblogsport from '../images/logoblogsport.png'
 import Components from '../components.css'
 import img from '../images/img.png'
 import { Link } from 'react-router-dom'
+import http from '../Http'
 function Navbar() {
 
 
 
 
+  const submit = () => {
+    localStorage.clear();
+    window.location.href = "/";
+    
+  }; 
 
-
-
-
-  // const Logout = () => {
-  //   localStorage.clear();
-  //   window.location.href = "/";
-  // };
-  var Logout = "";
-  if (localStorage.getItem('auth_token')) {
+  let Logout = "";
+  if (!localStorage.getItem('token')) {
     Logout = (
       <ul className="navbar-nav">
         <li class="nav-item">
@@ -31,19 +30,10 @@ function Navbar() {
   } else {
     Logout = (
       <li class="nav-item">
-        <a class="nav-link btn btn-danger " >deconnexion</a>
+        <a class="nav-link btn btn-danger " onClick={submit} >deconnexion</a>
       </li>
     )
 }
-
-
-
-
-
-
-
-
-
 
   return (
     // Pour la navbar du site 
@@ -74,6 +64,7 @@ function Navbar() {
             </li>
 
             {Logout}
+          
           </ul>
         </div>
       </div>
