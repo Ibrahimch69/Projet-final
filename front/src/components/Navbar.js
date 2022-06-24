@@ -34,6 +34,18 @@ function Navbar() {
       </li>
     )
 }
+//condiation pour le role
+let role = "";
+if (localStorage.getItem('role') === "admin") {
+  role = (
+    <ul className="navbar-nav">
+   <li class="nav-item">
+              <a class="nav-link" href='/list' >paramètre</a>
+            </li>
+            </ul> ) }
+
+
+
 
   return (
     // Pour la navbar du site 
@@ -59,9 +71,10 @@ function Navbar() {
             <li class="nav-item">
               <a class="nav-link" href='/articles' >Articles</a>
             </li>
-            <li class="nav-item">
+           {role} 
+            {/* <li class="nav-item">
               <a class="nav-link" href='/list' >paramètre</a>
-            </li>
+            </li> */}
 
             {Logout}
           

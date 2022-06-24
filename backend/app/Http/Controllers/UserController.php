@@ -10,6 +10,16 @@ class UserController extends Controller
 {
     public function register(Request $request)
     {
+        validator($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ])->validate();
+    if(validator($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ])->fails()){
+        return response()->json(['error'=>'email or password is incorrect'],401);
+    }
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -25,25 +35,46 @@ class UserController extends Controller
     //gestion de role et permission pour l'utilisateur 
     public function login(Request $request)
 {
+    validator($request->all(), [
+        'email' => 'required|email',
+        'password' => 'required',
+    ])->validate();
+if(validator($request->all(), [
+        'email' => 'required|email',
+        'password' => 'required',
+    ])->fails()){
+    return response()->json(['error'=>'email or password is incorrect'],401);
+}
+
     $user = User::where('email', $request->email)->first(); //on recherche l'utilisateur par son email
     if ($user) {
         if (Hash::check($request->password, $user->password)) {
+
+if ($user->role == 1) {
+            return response()->json([
+                'token' => $user->createToken(time())->plainTextToken,
+                'role' => 'admin'
+            ]); 
+        } else {
+            // return response()->json([
+            //     'token' => $user->createToken(time())->plainTextToken,
+            //     'name' => $user->name
+            // ]); 
             return response()->json([
                 'token' => $user->createToken(time())->plainTextToken,
             ]); 
-        } else {
-            return response()->json([
-                'error' => 'Invalid Credentials'
-            ]);
-        } if ($user->role == 1) {
-            return response()->json([
-                'token' => $user->createToken(time())->plainTextToken,
-            ]); 
-        } else {
-            return response()->json([
-                'error' => 'Invalid Credentials'
-            ]);
         }
+            // return response()->json([
+            //     'token' => $user->createToken(time())->plainTextToken,
+            // ]); 
+        } else {
+            return response()->json([
+                'error' => 'Invalid Credentials'
+            ]);
+        } 
+      
+        
+        
     }
 }
    

@@ -27,12 +27,13 @@ function App() {
     <Route path="/cree" element={ <Cree />}/>
     <Route path='/edit/:id' element={<Edit />} />
     <Route path='/view/:id' element={<Vu />} />
-    <Route path='/list' element={<List />} />
-
+    <Route path='/list' element={localStorage.getItem('role') ? <List/> :<Accueil/>} />
 
 
     <Route path="/connexion"  element={<Connexion/>} />
     <Route path="/inscription" element={<Inscription/>} />
+
+    
           
     
      

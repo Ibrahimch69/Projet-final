@@ -15,6 +15,8 @@ function Connexion() {
             if (res.data.token != undefined) {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
+                localStorage.setItem('role', res.data.role);
+                localStorage.setItem('name', res.data.name);
                 navigation('/');
             } else {
                 alert('email ou mot de passe incorrect');
