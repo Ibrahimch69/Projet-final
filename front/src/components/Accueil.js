@@ -31,22 +31,20 @@ function Accueil() {
   return (
     <div>
 <Navbar/>
+
+                                                    {/* partie 1 */}
       <section>
         <div class="container-fluid mt-5">
           <div className="row ">
             <div className="col-lg-5 mr-auto ">
-
-
               <img src={img} className="img-fluid w-25 rounded mx-auto d-block animate__animated  animate__backInDown" alt="logo" />
               {/* <h1 className='text-center animate__animated  animate__backInDown'>SPORTBLOG</h1>  */}
               <h1 className='text-center animate__animated  animate__backInDown titre'>Le sport c'est la vie </h1>
               <p className='text-center animate__animated  animate__backInDown'>Alors dans notre site, il y aurait beaucoup de cours sur le sport. </p>
               <div class="col text-center">
           <a href=""></a>   <button type="button"  className="btn btn-warning btnor animate__animated  animate__backInDown ">Voir les cours</button>
-
               </div>
             </div>
-
             <div class="col-lg-6 courir">
               <img src={sport} className="img-fluid animate__animated  animate__backInDown " alt="courir" />
             </div>
@@ -56,12 +54,7 @@ function Accueil() {
 
 
 
-
-
-
-
-
-
+                                                           {/* partie 2 */}
       <h1 className=' d-flex justify-content-center mt30  '>A propos</h1>
       <div class="container-fluid  ">
         <div className="row m30 ">
@@ -89,11 +82,13 @@ function Accueil() {
         </div>
       </div>
 
+
+
+
+
+
+                                                            {/* partie 3 */}    
       <h1 className='d-flex justify-content-center mt30'>Les bienfaits du sport </h1>
-    
-
-
-
       <div class="container">
   <div class="row  text-center m30 ">
  
@@ -116,51 +111,25 @@ function Accueil() {
 </div> 
 
 
-      
+                                                                      {/* partie 3 */}      
       <h1 className='d-flex justify-content-center mt30 ' id='mda'> Mes derniers articles</h1>
       <div class="container ">
         <div class="row m30">
-          
-         
-        
-
-
-
         {article.map((article)=>(
-    <div class="col-md-4 col-12 col-lg-3">
-        
-     <div class="card ">
+    <div class="col-md-4 col-12 col-lg-3">     
+    <div class="card ">
             <img src={ article.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{article.titre}</h5>
           <p class="card-text">{article.created_at}</p>
-      
           <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>&nbsp;
-       
           </div>
-            </div> 
-             </div> 
+      </div> 
+    </div> 
               
-   ))}
-
-
-
-
-
-
-
-
+  ))}
         </div>
-
-
       </div>
-
-
-
-
-
-
-   
 <Footer/>
     </div>
   )

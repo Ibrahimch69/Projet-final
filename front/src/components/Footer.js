@@ -17,13 +17,8 @@ function footer() {
                         <i class="fa-brands fa-facebook fa-5x m-5"></i>
                         <i class="fa-brands fa-linkedin fa-5x m-5"></i>
                         <i class="fa-brands fa-twitter fa-5x  m-5"></i>
-                     
-
-                   
-                  
                 </div>
-                </div>
-             
+          </div>
     </footer>
 
     </div>

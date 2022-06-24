@@ -15,13 +15,20 @@ function Connexion() {
             if (res.data.token != undefined) {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
-                localStorage.setItem('role', res.data.role);
-                localStorage.setItem('name', res.data.name);
+              //  localStorage.setItem('role', res.data.role);
                 navigation('/');
-            } else {
+            }  else {
                 alert('email ou mot de passe incorrect');
                 console.log(res);
-            }
+            } //pour savoir si il est admin ou non
+             if (res.data.role === "admin") {
+                localStorage.setItem('role', "admin");
+              }
+
+
+
+
+
         })
         }
     return (

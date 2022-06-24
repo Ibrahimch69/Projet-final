@@ -23,9 +23,9 @@ function App() {
     <Route path="/articles" element={ <Articles />}/> 
  
 
-
-    <Route path="/cree" element={ <Cree />}/>
-    <Route path='/edit/:id' element={<Edit />} />
+     
+    <Route path="/cree"    element={localStorage.getItem('role') ? <Cree/> :<Accueil/>} />
+    <Route path='/edit/:id'   element={localStorage.getItem('role') ? <Edit/> :<Accueil/>} />
     <Route path='/view/:id' element={<Vu />} />
     <Route path='/list' element={localStorage.getItem('role') ? <List/> :<Accueil/>} />
 

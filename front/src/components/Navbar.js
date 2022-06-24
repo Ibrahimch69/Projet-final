@@ -30,7 +30,7 @@ function Navbar() {
   } else {
     Logout = (
       <li class="nav-item">
-        <a class="nav-link btn btn-danger " onClick={submit} >deconnexion</a>
+        <a class="nav-link btn btn-danger  " onClick={submit} >deconnexion</a>
       </li>
     )
 }
@@ -72,9 +72,7 @@ if (localStorage.getItem('role') === "admin") {
               <a class="nav-link" href='/articles' >Articles</a>
             </li>
            {role} 
-            {/* <li class="nav-item">
-              <a class="nav-link" href='/list' >paramètre</a>
-            </li> */}
+       
 
             {Logout}
           

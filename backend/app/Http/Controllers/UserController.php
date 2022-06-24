@@ -39,39 +39,35 @@ class UserController extends Controller
         'email' => 'required|email',
         'password' => 'required',
     ])->validate();
-if(validator($request->all(), [
+    if(validator($request->all(), [
         'email' => 'required|email',
         'password' => 'required',
     ])->fails()){
     return response()->json(['error'=>'email or password is incorrect'],401);
-}
 
-    $user = User::where('email', $request->email)->first(); //on recherche l'utilisateur par son email
-    if ($user) {
+    } 
+
+    else { $user = User::where('email', $request->email)->first(); //on recherche l'utilisateur par son email
+
         if (Hash::check($request->password, $user->password)) {
 
-if ($user->role == 1) {
-            return response()->json([
+            if ($user->role == 1) {
+             return response()->json([
                 'token' => $user->createToken(time())->plainTextToken,
                 'role' => 'admin'
-            ]); 
-        } else {
-            // return response()->json([
-            //     'token' => $user->createToken(time())->plainTextToken,
-            //     'name' => $user->name
-            // ]); 
+        ]); 
+            } else {
+           
             return response()->json([
                 'token' => $user->createToken(time())->plainTextToken,
             ]); 
         }
-            // return response()->json([
-            //     'token' => $user->createToken(time())->plainTextToken,
-            // ]); 
-        } else {
-            return response()->json([
-                'error' => 'Invalid Credentials'
-            ]);
         } 
+        // else {
+        //     return response()->json([
+        //         'error' => 'Invalid Credentials'
+        //     ]);
+        // } 
       
         
         
