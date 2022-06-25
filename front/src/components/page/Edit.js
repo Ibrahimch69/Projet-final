@@ -35,9 +35,9 @@ export default function Edit(props) {
     }
     return (
         <div>
-            <h2>Edit User</h2>
+            <h2 className="text-center">Edit User</h2>
             <div className="row">
-                <div className="col-sm-6">
+            <div className="col-md-6 mx-auto">
                     <div className="card p-4">
                         <label>Titre</label>
                         <input type="text" name="titre" className="form-control mb-2"

@@ -19,9 +19,10 @@ export default function Create() {
     return (
         <div>
         
-                    <h2>New article</h2>
+                    <h2 className="text-center">Ajoute un nouvel article.</h2>
+                    
             <div className="row">
-                <div className="col-sm-6">
+            <div className="col-md-6 mx-auto">
                     <div className="card p-4">
                         <label>titre</label>
                         <input type="text" name="titre" className="form-control mb-2"
