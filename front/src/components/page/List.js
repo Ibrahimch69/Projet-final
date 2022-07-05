@@ -1,22 +1,22 @@
 import React from 'react'
 import {useState, useEffect} from 'react';
-import Http from '../../Http';
+import axios from '../../Axios';
 import { Link } from "react-router-dom";
 import Components from '../../components.css'
 function Home() {
     const [article, setArticle] = useState([]);
     useEffect(()=>{
-        fetchAllArticle();
+        listArticle();
     },[]);
 
-    const fetchAllArticle = () => {
-        Http.get('/article').then(res=>{
+    const listArticle = () => {
+        axios.get('/article').then(res=>{
             setArticle(res.data);
         })
     }
     const deleteArticle = (id) => {
-        Http.delete('/article/'+id).then(res=>{
-            fetchAllArticle();
+        axios.delete('/article/'+id).then(res=>{
+            listArticle();
         })
     }
 
@@ -31,7 +31,6 @@ function Home() {
     </div>
     <div class="container">
     <div className="row">
-   
             {article.map((article)=>(
     <div class="col-md-4 col-12 col-lg-3">
         
@@ -40,11 +39,11 @@ function Home() {
         <div class="card-body">
           <h5 class="card-title">{article.titre}</h5>
           <p class="card-text">{article.created_at}</p>
-          <Link className="btn btn-info" to={{ pathname: "/edit/" + article.id }}><i class="fa-solid fa-pen-to-square"></i></Link>&nbsp;
-          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>&nbsp;
+          <Link className="btn btn-info" to={{ pathname: "/edit/" + article.id }}><i class="fa-solid fa-pen-to-square"></i></Link>
+          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>
           <button type="button" className="btn btn-danger"
-                            onClick={()=>{deleteArticle(article.id)}}
-                           ><i class="fa-solid fa-trash"></i></button>
+                            onClick={()=>{deleteArticle(article.id)}} >
+                                <i class="fa-solid fa-trash"></i></button>
           </div>
             </div> 
              </div> 

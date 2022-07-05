@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import img from '../images/img.png'
 import 'animate.css';
-import Http from '../Http';
+import axios from '../Axios';
 import sport from '../images/sport.jpeg'
 import spo from '../images/spo.jpg'
 import pdp from '../images/pdp.jpg'
@@ -24,7 +24,7 @@ function Accueil() {
   }, []);
   // affiche les derniers articles
   const fetchAllUsers = () => {
-    Http.get('/article').then(res => {
+    axios.get('/article').then(res => {
       setArticle(res.data);
     })
   }
@@ -94,14 +94,11 @@ function Accueil() {
  
     <div class="col-md-4 col-12 col-lg-4">
     <img src={muscle} className="img-fluid w-50" alt="courir" />
-    <h5>perde du muscle</h5>
- 
+    <h5>prendre du muscle</h5>
     </div>
-    
- 
     <div class="col-md-4 col-12 col-lg-4">
     <img src={poids} className="img-fluid w-50 " alt="courir" />
-    <h5 >perde du bois</h5>
+    <h5 >perdre du poids</h5>
     </div>
     <div class="col-md-4 col-12 col-lg-4">
     <img src={coeur} className="img-fluid w-50  " alt="courir" />
@@ -111,11 +108,14 @@ function Accueil() {
 </div> 
 
 
-                                                                      {/* partie 3 */}      
+                                                                      {/* partie 3 */}  
+                                                                 
       <h1 className='d-flex justify-content-center mt30 ' id='mda'> Mes derniers articles</h1>
       <div class="container ">
         <div class="row m30">
-        {article.map((article)=>(
+        {article.map((article,key)=>(
+        key < 4 ?
+        
     <div class="col-md-4 col-12 col-lg-3">     
     <div class="card ">
             <img src={ article.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
@@ -126,8 +126,10 @@ function Accueil() {
           </div>
       </div> 
     </div> 
-              
-  ))}
+             :
+             null
+  ))
+        }
         </div>
       </div>
 <Footer/>

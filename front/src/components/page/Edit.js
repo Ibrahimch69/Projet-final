@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import http from '../../Http';
+import axios from '../../Axios';
 
 
-export default function Edit(props) {
+export default function Edit() {
     const navigate = useNavigate();
     const [article,setArticle] = useState({});
     const {id} = useParams();
 
     useEffect(()=>{
-        fetchUser()
+        EditArticle()
     },[]);
 
-    const fetchUser= () =>{
-            http.get('/article/'+id+'/edit').then((res)=>{
+    const  EditArticle= () =>{
+            axios.get('/article/'+id+'/edit').then((res)=>{
             setArticle({
                 titre:res.data.titre,
                 description:res.data.description,
@@ -21,7 +21,6 @@ export default function Edit(props) {
             });
         });
     }
-
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -29,7 +28,7 @@ export default function Edit(props) {
     }
 
     const submitForm = () =>{
-        http.put('/article/'+id,article).then((res)=>{
+        axios.put('/article/'+id,article).then((res)=>{
             navigate('/list');
         })
     }

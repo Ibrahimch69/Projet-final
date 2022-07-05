@@ -3,24 +3,32 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import 'animate.css';
 import {useState, useEffect} from 'react';
-import Http from '../Http';
+import axios from '../Axios';
+import {useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+
+
 
 function Articles() {
-  const [users, setUsers] = useState([]);
+  
+  const [articles, setArticles] = useState([]);
   useEffect(()=>{
-      fetchAllUsers();
+      VuArticles();
   },[]);
 
-  const fetchAllUsers = () => {
-      Http.get('/article').then(res=>{
-          setUsers(res.data);
+  const VuArticles = () => {
+      axios.get('/article').then(res=>{
+          setArticles(res.data);
       })
   }
-  const deleteUser = (id) => {
-      Http.delete('/article/'+id).then(res=>{
-          fetchAllUsers();
-      })
-  }
+
+  
+
+
+
+
+
   return (
     <div>
         <Navbar/>
@@ -29,14 +37,14 @@ function Articles() {
 <div class="container">
     <div className="row m30">
    
-            {users.map((user)=>(
+            {articles.map((article)=>(
     <div class="col-md-4 col-12 col-lg-3">
         
      <div class="card ">
-            <img src={ user.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
+            <img src={ article.image } class="card-img-top img-fluid imgcard card-img-top img-thumbnail" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">{user.titre}</h5>
-         
+          <h5 class="card-title">{article.titre}</h5>
+          <Link className="btn btn-primary" to={{ pathname: "/view/" + article.id }}><i class="fa-solid fa-eye"></i></Link>
        
           </div>
             </div> 

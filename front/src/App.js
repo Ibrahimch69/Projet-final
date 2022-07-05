@@ -10,6 +10,8 @@ import Vu from './components/page/Vu';
 import List from './components/page/List';
 import Connexion from './components/auth/Connexion';
 import Inscription from './components/auth/Inscription';
+import ProtectedRoute from './components/page/ProtectedRoute';
+import Protectedadmin from './components/page/Protectedadmin';
 
 function App() {
   return (
@@ -20,14 +22,16 @@ function App() {
     <Route path="/" element={<Accueil/>}/>
     <Route path="/navbar" element={ <Navbar />}/> 
     <Route path="/footer" element={ <Footer />}/> 
-    <Route path="/articles" element={ <Articles />}/> 
+  
+
+    <Route path="/articles" element={<ProtectedRoute><Articles/></ProtectedRoute>} />
  
 
      
-    <Route path="/cree"    element={localStorage.getItem('role') ? <Cree/> :<Accueil/>} />
-    <Route path='/edit/:id'   element={localStorage.getItem('role') ? <Edit/> :<Accueil/>} />
-    <Route path='/view/:id' element={<Vu />} />
-    <Route path='/list' element={localStorage.getItem('role') ? <List/> :<Accueil/>} />
+    <Route path="/cree"    element={<Protectedadmin><Cree/></Protectedadmin>} />
+    <Route path='/edit/:id'   element={<Protectedadmin><Edit/></Protectedadmin>} />
+    <Route path='/view/:id'element={<ProtectedRoute><Vu/></ProtectedRoute>} />
+    <Route path='/list'  element={<Protectedadmin><List/></Protectedadmin>} />
 
 
     <Route path="/connexion"  element={<Connexion/>} />

@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Http from "../../Http";
+import axios from "../../Axios";
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 
 
-export default function View(props) {
+
+export default function View() {
     const [article,setArticle] = useState({});
     const {id} = useParams();
 
     useEffect(()=>{
-        fetchArticle()
+        VuArticle()
     },[]);
 
-    const fetchArticle= () =>{
-        Http.get('/article/'+id+'/edit').then((res)=>{
+    const VuArticle= () =>{
+        axios.get('/article/'+id+'/edit').then((res)=>{
             setArticle({
                titre:res.data.titre,
                 description:res.data.description,
@@ -22,11 +24,6 @@ export default function View(props) {
             });
         });
     }
-    
-
-
- 
-    
     return ( 
         <div>
             <Navbar/>
@@ -46,6 +43,7 @@ export default function View(props) {
   </div>
             </div>
          </div>
+         <Footer/>
           </div>
          
         

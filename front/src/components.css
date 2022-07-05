@@ -8,14 +8,11 @@
   .dark{
     background-color: #000000;
   }
-  .dark{
-    background-color: #000000;
-  }
   .erwin{
     float: left;
     margin: 0 0 0 15px;  
   }
-ç
+
   
 
   .m30{
@@ -35,7 +32,7 @@ margin: 32px;
   } 
 .imgcard{
   height:180px ;
-  width: auto;
+  width: 100%;
 }
 
 /* .card:hover {

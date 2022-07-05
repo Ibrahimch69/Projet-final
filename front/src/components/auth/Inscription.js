@@ -1,24 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import http from '../../Http'
-
-
-
-  // const navigate = useNavigate();
-  // const [inputs,setInputs] = useState({});
-  // const handleChange = (event) => {
-
-  //     const name = event.target.name;
-  //     const value = event.target.value; 
-  //     setInputs(values => ({...values,[name]:value}))
-  // }
-
-  //  const submitForm = () =>{
-  //     http.post('/register',inputs).then((res)=>{
-  //         navigate('/connexion');
-  //      })
-  //  }
-
+import axios from '../../Axios'
 
   function Inscription() {
   const [email, setEmail] = useState('');
@@ -27,7 +9,7 @@ import http from '../../Http'
   const navigation = useNavigate();
 
   const submitForm = () =>{
-    http.post('/register',{email,name,password}).then((res)=>{
+    axios.post('/register',{email,name,password}).then((res)=>{
       navigation('/connexion');
     }
     )

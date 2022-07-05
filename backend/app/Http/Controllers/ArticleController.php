@@ -22,13 +22,13 @@ class ArticleController extends Controller
             'image'=>$request->image,
         ]);
         return response()->json('successfully created');
-
-  
     }
+
     public function edit($id)
     {
         return response()->json(Article::whereId($id)->first());
     }
+
 
     public function update(Request $request, $id)
     {
